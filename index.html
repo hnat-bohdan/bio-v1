@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="prof_pic.png"/>
+    <title>Hnatiuk Bohdan | Link In Bio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Sansita+Swashed:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="/main.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /></head>
+  <body>
+    <div id="main">
+        <div class="ig"  v-cloak>
+            <div class="top" id="top">
+                <div class="container">
+                    <img class="img_ava" src="/prof_pic.png">
+                </div>
+                <div>
+                    <span id="h1"> {{name}} </span>
+                </div>
+                    <span id="description">
+                        {{description}}
+                    </span>
+            </div>
+            <div class="Butbox">
+                <div id="button1" class="button"
+                @mouseover="buttonColor1 = 'transparent'"
+                @touchstart="buttonColor1 = 'transparent'"
+                @touchmove="buttonColor1 = 'transparent'"
+                @mouseout="buttonColor1 = '#5ebdd4'"
+                @touchend="buttonColor1 = '#5ebdd4'"
+                :style="{ backgroundColor: buttonColor1 }"
+                @click="redirect('https://guest.link/eXf')">
+                    <span class="h2">
+                        🍷 Other Examples
+                    </span> 
+                    <span class="material-symbols-outlined">
+                        north_east
+                    </span>
+                </div>
+
+                <div id="button2" class="button" 
+                @mouseover="buttonColor2 = 'transparent'"
+                @touchstart="buttonColor2 = 'transparent'"
+                @touchmove="buttonColor2 = 'transparent'"
+                @mouseout="buttonColor2 = '#5ebdd4'"
+                @touchend="buttonColor2 = '#5ebdd4'"
+                :style="{ backgroundColor: buttonColor2 }"
+                @click="redirect('https://t.me/Hnat_Bohdan')">
+                    <span class="h2">
+                        ✈️ Telegram
+                    </span>
+                    <span class="material-symbols-outlined">
+                        north_east
+                    </span>
+                </div>
+
+                <div id="button3" class="button" 
+                @mouseover="buttonColor3 = 'transparent'"
+                @touchstart="buttonColor3 = 'transparent'"
+                @touchmove="buttonColor3 = 'transparent'"
+                @mouseout="buttonColor3 = '#5ebdd4'"
+                @touchend="buttonColor3 = '#5ebdd4'"
+                :style="{ backgroundColor: buttonColor3 }"
+                @click="redirect('https://www.youtube.com/channel/UCeOe2TvuHxEugXC3TDXgUXQ')">
+                    <span class="h2">
+                        🖥️ My Youtube
+                    </span>
+                    <span class="material-symbols-outlined">
+                        north_east
+                    </span> 
+                </div>
+
+                <div id="button4" class="button"
+                @mouseover="buttonColor4 = 'transparent'"
+                @touchstart="buttonColor4 = 'transparent'"
+                @touchmove="buttonColor4 = 'transparent'"
+                @mouseout="buttonColor4 = '#5ebdd4'"
+                @touchend="buttonColor4 = '#5ebdd4'"
+                :style="{ backgroundColor: buttonColor4 }"
+                @click="redirect('mailto:hnatiuk.b08@gmail.com')">
+                    <span class="h2">
+                        📩 Email Me
+                    </span> 
+                    <span class="material-symbols-outlined">
+                        north_east
+                    </span>
+                </div>
+
+                <div class="button"
+                :style="{ backgroundColor: shr_buttonColor }" 
+                @mouseover="mouseover()" 
+                @mouseout="shr_buttonColor = '#5ebdd4'"
+                @touchstart="shr_buttonColor = 'mouseover()'"
+                @touchmove="shr_buttonColor = 'transparent'"
+                @mouseout="shr_buttonColor = '#5ebdd4'"
+                @touchend="shr_buttonColor = '#5ebdd4'">
+                        <span class="h2" @click="toggle()">
+                            🌍 Share
+                        </span>
+                        <span  class="material-symbols-outlined" @mousemove="onmove()" @click="toggle()">
+                            {{ iconText }}
+                        </span>
+                        <div v-if="shr_menu">
+                            <div class="menu">
+                                <input type="url" v-model="link_bio">
+                                <div style="align-content: center;">
+                                    <span @click="CopyLink()" class="material-symbols-outlined">
+                                        {{ CopyIcon }}
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- icons -->
+                            <div>
+                                <div class="iconsBox">
+                                    <img id="frst_icon" class="icon" :src="link_email" 
+                                    @click="emailShare" 
+                                    @mouseover="changeEmail" 
+                                    @mouseout="resetEmail"
+                                    @touchmove="changeEmail" 
+                                    @touchstart="changeEmail" 
+                                    @touchend="resetEmail"/>
+    
+                                    <img style="border-radius: 50%;" class="icon" :src="link_wht" 
+                                    @click="whtShare" 
+                                    @mouseover="changeWht" 
+                                    @mouseout="resetWht"
+                                    @touchmove="changeWht" 
+                                    @touchstart="changeWht" 
+                                    @touchend="resetWht"/>
+    
+                                    <img class="icon" :src="link_tg" 
+                                    @click="tgShare" 
+                                    @mouseover="changeTg" 
+                                    @mouseout="resetTg"
+                                    @touchmove="changeTg" 
+                                    @touchstart="changeTg" 
+                                    @touchend="resetTg"/>
+    
+                                    <img class="icon" :src="link_face" 
+                                    @click="faceShare" 
+                                    @mouseover="changeFace" 
+                                    @mouseout="resetFace"
+                                    @touchmove="changeFace" 
+                                    @touchstart="changeFace" 
+                                    @touchend="resetFace"/>
+    
+                                    <img class="icon" :src="link_X" 
+                                    @click="XShare" 
+                                    @mouseover="changeX" 
+                                    @mouseout="resetX"
+                                    @touchmove="changeX" 
+                                    @touchstart="changeX" 
+                                    @touchend="resetX"/>
+    
+                                    <img 
+                                    style="border-radius: 50%;"
+                                    class="icon"              
+                                    :src="link_EdIn" 
+                                    @click="edInShare" 
+                                    @mouseover="changeEdIn" 
+                                    @mouseout="resetEdIn"
+                                    @touchmove="changeEdIn" 
+                                    @touchstart="changeEdIn" 
+                                    @touchend="resetEdIn"/>
+    
+                                    <img class="icon" :src="link_pin" 
+                                    @click="pinShare" 
+                                    @mouseover="changePin" 
+                                    @mouseout="resetPin"
+                                    @touchmove="changePin" 
+                                    @touchstart="changePin" 
+                                    @touchend="resetPin"/>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <br>
+            <div class="container">
+                <span id="description">© 2023 {{name}}. All Rights Reserved.</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    let app_main = Vue.createApp({
+        data() {
+            return {
+                shr_menu: false,
+                iconText: "expand_more",
+                shr_buttonColor: "#5ebdd4",
+                buttonColor1: "#5ebdd4",
+                buttonColor2: "#5ebdd4",
+                buttonColor3: "#5ebdd4",
+                buttonColor4: "#5ebdd4",
+                link_bio: window.location.href,
+                CopyIcon: "content_copy",
+                link_email: "social/email_dark.png",
+                link_wht: "/social/wht_dark.png",
+                link_tg: "/social/tg_dark.png",
+                link_EdIn: 'social/link_dark.png',
+                link_face: 'social/face_dark.png',
+                link_X: 'social/X_dark.png',
+                link_pin: 'social/pin_dark.png',
+                name: "Hnatiuk Bohdan",
+                description: "Just an influencer without an audience 🥲",
+                template_share_phrase:"Hey, check out the bio page of "
+            }
+        },
+        methods: {
+            greeting(greeting=this.template_share_phrase, name=this.name) {
+                return this.delete_spaces(greeting) + this.delete_spaces(name)
+            },
+            mouseover() {
+                if (this.shr_menu == false) {this.shr_buttonColor = 'transparent'}
+                this.CopyIcon = "content_copy"
+            },
+            redirect(url) {
+                window.open(url, "_blank");
+                console.log("redirected to "+url)
+            },
+            toggle() {
+                this.shr_menu = !this.shr_menu
+                this.link_bio = window.location.href
+                if (this.iconText != "expand_less") {
+                    this.iconText = "expand_less"
+                }
+                else {this.iconText = "expand_more"}
+            },
+            Copy(link) {
+                navigator.clipboard.writeText(link) // Copy the URL to the clipboard
+                .then(function() {
+                    console.log("Copied: " + link)
+                })
+                .catch(function(error) {
+                    console.error("Failed to copy link: ", error);
+                });
+            },
+            CopyLink() {
+                this.Copy(this.link_bio)
+                this.CopyIcon = "inventory"
+            },
+            changeEmail() {
+                this.link_email = 'social/email.png';
+            },
+            resetEmail() {
+                this.link_email = 'social/email_dark.png';
+            },
+            emailShare(lang="en", ) {
+                link = "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su="+ this.greeting() +"&to=info@example.com&body=" +  this.link_bio
+                this.redirect(link)
+
+            },
+            delete_spaces(str, sign="+") {
+                return str.replace(/ /g, sign)
+            },
+            changeTg() {
+                this.link_tg = 'social/tg.png';
+            },
+            resetTg() {
+                this.link_tg = 'social/tg_dark.png';
+            },
+            tgShare(lang="en", ) {
+                link = "https://telegram.me/share/url?url="+this.link_bio+"&text=" + this.greeting()
+                this.redirect(link)
+
+            },
+            changeWht() {
+                this.link_wht = 'social/wht.png';
+            },
+            resetWht() {
+                this.link_wht = 'social/wht_dark.png';
+            },
+            whtShare(lang="en", ) {
+                link = "https://api.whatsapp.com/send?text=" + this.greeting() + "+" + this.link_bio
+                this.redirect(link)
+
+            },
+            changeEdIn() {
+                this.link_EdIn = 'social/link.png';
+            },
+            resetEdIn() {
+                this.link_EdIn = 'social/link_dark.png';
+            },
+            edInShare(lang="en", ) {
+                link = "https://www.linkedin.com/sharing/share-offsite/?url=" + this.link_bio
+                this.redirect(link)
+
+            },
+            changeFace() {
+                this.link_face = 'social/face.png';
+            },
+            resetFace() {
+                this.link_face = 'social/face_dark.png';
+            },
+            faceShare(lang="en", ) {
+                link = "https://www.facebook.com/sharer/sharer.php?u=" + this.link_bio
+                this.redirect(link)
+
+            },
+            changeX() {
+                this.link_X = 'social/X.png';
+            },
+            resetX() {
+                this.link_X = 'social/X_dark.png';
+            },
+            XShare(lang="en", ) {
+                link = "https://x.com/intent/tweet?url="+ this.link_bio  + "&text=" + this.greeting() 
+                this.redirect(link)
+
+            },
+            changePin() {
+                this.link_pin = 'social/pin.png';
+            },
+            resetPin() {
+                this.link_pin = 'social/pin_dark.png';
+            },
+            pinShare(lang="en", ) {
+                link = "https://pinterest.com/pin/create/button/?url="+ this.link_bio + "&media=" + this.link_bio + "/prof_pic.png" + "&description=" + this.greeting()
+                this.redirect(link)
+
+            },
+
+
+
+
+
+
+        }
+    })
+  app_main.mount('#main')
+</script>
+
+
+  </body>
+</html>

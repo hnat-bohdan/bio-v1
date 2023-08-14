@@ -1,0 +1,228 @@
+body {
+  background-image: linear-gradient(to right, #8c52ff, #5ce1e6);
+  height: 100%;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+#ig {
+  text-align: center;
+  align-items: center;
+}
+
+#top {
+  margin-top: 15px;
+  text-align: center;
+  align-items: center;
+}
+
+
+.menu {
+  display: grid;
+  grid-template-columns: auto 20px;
+}
+
+.Butbox {
+  display: grid;
+  place-items: center;
+}
+
+.button {
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto 50px;
+  width: 420px;
+  background-color: #5ebdd4;
+  margin-top: 25px;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+  border-radius: 50%;
+  border-radius: 25px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.iconsBox {
+  padding-bottom: 5px;
+}
+
+.material-symbols-outlined {
+  color: white;
+  font-variation-settings: "FILL" 0, "wght" 1600, "GRAD" 850, "opsz" 38;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img_ava {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border-color: white;
+  border-style: solid;
+  border-width: 3px;
+}
+
+#h1 {
+  text-align: center;
+  color: white;
+  font-family: "Sansita Swashed";
+  font-size: 45px;
+}
+
+.h2 {
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
+  margin-left: 20px;
+  color: white;
+  font-family: "Fira Sans", bold;
+  font-size: 30px;
+}
+
+#description {
+  text-align: center;
+  color: lightgray;
+  font-family: "Fira Sans", cursive;
+  margin-top: -10px;
+  font-size: 22px;
+}
+
+input {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-family: "Fira Sans";
+}
+
+.icon {
+  margin: 1.5px;
+  width: 48px;
+  height: 48px;
+  border-radius: 25%;
+}
+
+#frst_icon {
+  margin-left: 10px;
+}
+
+/* 
+gg 
+*/
+
+
+@media only screen and (max-width: 430px) {
+  input {
+    margin-top: 2px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .iconsBox {
+    padding-bottom: 3px;
+    display: flex;
+    align-items:center;
+  }
+
+  #frst_icon {
+    margin-left: 5px;
+  }
+
+  .menu {
+    width: auto;
+  }
+
+  .icon {
+    margin: 1px;
+    width: 14%;
+    height: 14%;
+    border-radius: 25%;
+  }
+
+
+  #top {
+    margin-top: 5px;
+    align-items: center;
+  }
+
+  .Butbox {
+    display: grid;
+    place-items: center;
+  }
+
+  .button {
+    align-items: center;
+    display: grid;
+    grid-template-columns: auto 30px;
+    width: 85%;
+    background-color: #5ebdd4;
+    margin-top: 15px;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    border-radius: 50%;
+    border-radius: 17px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .material-symbols-outlined {
+    margin-right: 15px;
+    color: white;
+    font-variation-settings: "FILL" 0, "wght" 450, "GRAD" 30, "opsz" 28;
+  }
+
+  .container {
+    margin: 10px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img_ava {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border-color: white;
+    border-style: solid;
+    border-width: 1.5px;
+  }
+
+  #h1 {
+    text-align: center;
+    color: white;
+    font-family: "Sansita Swashed";
+    font-size: 35px;
+    margin: 5px;
+  }
+
+  .h2 {
+    margin-top:5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    color: white;
+    font-family: "Fira Sans", bold;
+    font-size: 26px;
+  }
+
+  #description {
+    text-align: center;
+    color: lightgrey;
+    font-family: "Fira Sans", cursive;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+
+  html, body {
+    height: 150%;
+    background-image: linear-gradient(to top, #8c52ff, #5ce1e6);
+  }
+}
